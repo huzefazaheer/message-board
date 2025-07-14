@@ -6,16 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Message Board</h1>
     <div class="messagewrapper">
-        <%messages.forEach(msg=>{%>
-            <h3><%=msg.user%></h3>
-            <p><%=msg.text%></p>
+            <h2><%=msg.user%></h2>
+            <h3><%=msg.text%></h3>
             <p><%=msg.added%></p>
-            <a href=<%="/messages/"+msg.id%>>Open</a>
-        <%})%>
     </div>
-    <br/>
-    <a href="/new">Add new note</a>
+    <a href="/">Go back</a>
 </body>
 </html>
