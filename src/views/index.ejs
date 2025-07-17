@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Message Board</h1>
     <div class="messagewrapper">
         <%messages.forEach(msg=>{%>
-            <h3><%=msg.user%></h3>
-            <p><%=msg.text%></p>
-            <p><%=msg.added%></p>
-            <a href=<%="/"+msg.id%>>Open</a>
+            <a href=<%="/"+msg.id%> class="msg">
+            <p class="text"><%=msg.text%></p>
+            <div class="bottom">
+                <h3><%=msg.username%></h3>
+            <p class="date"><%=msg.added%></p>
+            </div>
+            
+            </a>
         <%})%>
     </div>
     <br/>
-    <a href="/new">Add new note</a>
+    <a href="/new" id="new">Add new note</a>
 </body>
 </html>

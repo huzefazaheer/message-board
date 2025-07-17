@@ -1,0 +1,106 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: snow;
+    height: 100vh;
+}
+
+h1{
+    margin-left: 60px;
+}
+
+h3{
+    margin: 0;
+    margin-bottom: 5px !important;
+}
+
+.messagewrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    gap: 10px;
+    margin: 60px 20px;
+}
+
+.msg{
+    padding: 10px 20px;
+    width: 350px;
+    height: 200px;
+    text-decoration: none;
+    color: black;
+    transition: all 100ms ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.msg:hover{
+    transform: scale(1.1);
+}
+
+.msg:nth-of-type(n){
+    background-color: lightgreen;
+}
+
+.msg:nth-of-type(2n){
+    background-color: lightblue;
+}
+
+.msg:nth-of-type(3n){
+    background-color: yellow;
+}
+
+#new{
+    background-color: white;
+    padding: 20px 40px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+}
+
+.date{
+    color: rgb(66, 66, 66);
+    margin-top: 0;
+}
+
+.text{
+    font-size: 20px;
+}
+
+.newmsghead{
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+label{
+    margin-bottom: 10px;
+}
+
+input{
+    width: 200px;
+    height: 30px;
+}
+
+button{
+    background-color: white;
+    padding: 20px 20px;
+    width: 220px;
+    margin-top: 40px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+}
