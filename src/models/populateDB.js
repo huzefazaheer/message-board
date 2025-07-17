@@ -20,7 +20,7 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: "postgresql://huzefa:123@localhost:5432/messageboard",
+    connectionString: process.env.DB,
   });
   await client.connect();
   await client.query(SQL);
