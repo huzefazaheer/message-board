@@ -1,5 +1,8 @@
 const express = require("express")
 const path = require("path")
+const pool = require("./models/pool")
+const { messageGet, messageDetailGet } = require("./controllers/messageController")
+const { newMessageGet, newMessagePost } = require("./controllers/newMessageController")
 const app = express()
 
 const PORT = process.env.PORT || 8080
@@ -16,44 +19,14 @@ app.use(express.urlencoded({ extended: true }));
 
 let freeId = 3
 
-const messages = [
-  {
-    id:1,
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date()
-  },
-  {
-    id:2,
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date()
-  }
-];
+app.get("/", messageGet)
 
+app.get("/new", newMessageGet)
 
-app.get("/", (req, res) => {
-    res.render('index', {messages:messages})
-})
+app.post("/new", newMessagePost)
 
-app.get("/messages/:id", (req, res) => {
-   res.render('messagedetail', {msg:messages[req.params.id-1]})
-})
+app.get("/:id", messageDetailGet)
 
-app.get("/new", (req, res) => {
-    res.render('new')
-})
-
-app.post("/new", (req, res) => {
-    messages.push({
-        id:freeId,
-        text: req.body.msg,
-        user: req.body.name,
-        added: new Date()
-        })
-    freeId++
-    res.redirect("/")
-})
 
 app.listen(PORT, ()=>{
     console.log("Server started at port ", PORT)
