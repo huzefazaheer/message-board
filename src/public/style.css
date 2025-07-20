@@ -37,27 +37,69 @@ h3{
     transform: scale(1.1);
 }
 
-.msg:nth-of-type(n){
+/* First child: green */
+.msg:nth-of-type(4n + 1) {
     background-color: lightgreen;
 }
 
-.msg:nth-of-type(2n){
-    background-color: lightblue;
-}
-
-.msg:nth-of-type(3n){
+/* Second child: yellow */
+.msg:nth-of-type(4n + 2) {
     background-color: yellow;
 }
 
-#new{
-    background-color: white;
+/* Third child: blue */
+.msg:nth-of-type(4n + 3) {
+    background-color: lightblue;
+}
+
+/* Fourth child: coral */
+.msg:nth-of-type(4n + 4) {
+    background-color: lightcoral;
+}
+
+button {
+    border-radius: 23px;
+    font-weight: bold;
     padding: 20px 40px;
+}
+
+#new {
+    width: 32px;
+    height: 32px;
+    border-radius: 42px !important;
+    padding: 20px;
+    border: 1px solid white;
+}
+
+img{
+    width: 2.1rem;
+    height: 2.1rem;
+}
+
+#new, button{
+    background-color: black;
     border: 1px solid black;
     text-decoration: none;
-    color: black;
-    position: absolute;
-    bottom: 0;
-    left: 45%;
+    color: white;
+    transition: all 100ms ease;
+}
+
+#new:hover, button:hover{
+    transform: scale(1.1);
+    border-radius: 40px;
+}
+
+#new:active, button:active{
+    background-color: rgb(30, 30, 30);
+    border: 1px solid black;
+    text-decoration: none;
+    color: white;
+}
+
+#new{
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
 }
 
 .date{
@@ -91,16 +133,27 @@ label{
 }
 
 input{
-    width: 200px;
+    width: 500px;
     height: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(92, 92, 92);
+}
+
+textarea{
+    width: 500px;
+    height: 200px;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(92, 92, 92);
 }
 
 button{
-    background-color: white;
     padding: 20px 20px;
     width: 220px;
     margin-top: 40px;
-    border: 1px solid black;
-    text-decoration: none;
-    color: black;
+}
+
+.error{
+    width: 100%;
+    color: red;
 }
