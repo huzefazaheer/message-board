@@ -30,6 +30,7 @@ h3{
     transition: all 100ms ease;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     justify-content: space-between;
 }
 
@@ -109,6 +110,7 @@ img{
 
 .text{
     font-size: 20px;
+    overflow-wrap: break-word;
 }
 
 .newmsghead{
@@ -154,6 +156,7 @@ button{
 }
 
 .error{
-    width: 100%;
+    /* width: 100%; */
     color: red;
+
 }

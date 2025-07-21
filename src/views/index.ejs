@@ -11,9 +11,17 @@
     <div class="messagewrapper">
         <%messages.forEach(msg=>{%>
             <a href=<%="/"+msg.id%> class="msg">
-            <p class="text"><%=msg.text%></p>
+            <% if (msg.text.length < 120) { %>
+                    <p class="text"><%=msg.text%></p>
+            <% } else { %>
+                <p class="text"><%=msg.text.substring(0, 120) + '...'%></p>
+            <% } %>
             <div class="bottom">
-                <h3><%=msg.username%></h3>
+                <% if (msg.username.length < 20) { %>
+                    <h3><%= msg.username %></h3>
+                <% } else { %>
+                    <h3><%= msg.username.substring(0, 20) + '...' %></h3>
+                <% } %>
             <p class="date"><%=msg.added%></p>
             </div>
             
