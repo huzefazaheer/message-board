@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message Board</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h2 class="newmsghead">Add New Message</h2>
     <form method="POST" action="/new">
-        <div class="input" >
-            <label for="msg">Message</label>
-            <textarea type="text" id="msg" name="msg" ></textarea>
-        </div>
-        <div class="input">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" >
-        </div>
-         <% if (typeof error !== 'undefined' && error.msg) { %>
-            <p class="error"><%= error.msg %></p>
-        <% } %>
-        <button type="submit">Add New Note</button>
+      <div class="input">
+        <label for="msg">Message</label>
+        <textarea type="text" id="msg" name="msg"></textarea>
+      </div>
+      <div class="input">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" />
+      </div>
+      <% if (typeof error !== 'undefined' && error.msg) { %>
+      <p class="error"><%= error.msg %></p>
+      <% } %>
+      <button type="submit">Add New Note</button>
     </form>
-
-</body>
+  </body>
 </html>

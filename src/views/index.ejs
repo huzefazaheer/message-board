@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message Board</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Message Board</h1>
     <div class="messagewrapper">
-        <%messages.forEach(msg=>{%>
-            <a href=<%="/"+msg.id%> class="msg">
-            <% if (msg.text.length < 120) { %>
-                    <p class="text"><%=msg.text%></p>
-            <% } else { %>
-                <p class="text"><%=msg.text.substring(0, 120) + '...'%></p>
-            <% } %>
-            <div class="bottom">
-                <% if (msg.username.length < 20) { %>
-                    <h3><%= msg.username %></h3>
-                <% } else { %>
-                    <h3><%= msg.username.substring(0, 20) + '...' %></h3>
-                <% } %>
-            <p class="date"><%=msg.added%></p>
-            </div>
-            
-            </a>
-        <%})%>
+      <%messages.forEach(msg=>{%>
+      <a href="<%" ="/" +msg.id%>
+        class="msg"> <% if (msg.text.length < 120) { %>
+        <p class="text"><%=msg.text%></p>
+        <% } else { %>
+        <p class="text"><%=msg.text.substring(0, 120) + '...'%></p>
+        <% } %>
+        <div class="bottom">
+          <% if (msg.username.length < 20) { %>
+          <h3><%= msg.username %></h3>
+          <% } else { %>
+          <h3><%= msg.username.substring(0, 20) + '...' %></h3>
+          <% } %>
+          <p class="date"><%=msg.added%></p>
+        </div>
+      </a>
+      <%})%>
     </div>
-    <br/>
-    <a href="/new" id="new"><img src="/add.svg"></a>
-</body>
+    <br />
+    <a href="/new" id="new"><img src="/add.svg" /></a>
+  </body>
 </html>
