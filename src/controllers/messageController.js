@@ -10,12 +10,16 @@ function formatDateToYYYYMMDD(date) {
 }
 
 async function messageGet(req, res) {
-  const msgs = await getMessages()
-  const fmsgs = msgs.map((msg) => ({
-    ...msg, // Keep all other properties
-    added: formatDateToYYYYMMDD(new Date(msg.added)), // Convert to Date object, then format
-  }))
-  res.render('index', { messages: fmsgs })
+  try {
+    const msgs = await getMessages()
+    const fmsgs = msgs.map((msg) => ({
+      ...msg, // Keep all other properties
+      added: formatDateToYYYYMMDD(new Date(msg.added)), // Convert to Date object, then format
+    }))
+    res.render('index', { messages: fmsgs })
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 async function messageDetailGet(req, res) {
